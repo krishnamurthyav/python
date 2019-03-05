@@ -14,19 +14,40 @@
 
 from Utilities.utility import FunctionalCode
 
-q1 = FunctionalCode
+quadratic = FunctionalCode
 
 
 class Quadratic_Equ:
-    try:
-        print("Enter the value of a ")
-        a = int(input())
-        print("Enter the value of b ")
-        b = int(input())
-        print("Enter the value of c ")
-        c = int(input())
+    flag = 0
+    while flag == 0:
+        try:
+            valueA = int(input("Enter valueA "))
+            type(valueA) == int
+            flag = 1
+        except:
+            print("Re-Enter valueA value")
+            continue
 
-        q1.rootsOfEquation(a, b, c)
+    while flag == 1:
+        try:
+            valueB = int(input("Enter valueB "))
+            type(valueB) == int
+            flag = 2
+        except:
+            print("Re-Enter valueB value")
+            continue
+
+    while flag == 2:
+        try:
+            valueC = int(input("Enter valueC "))
+            type(valueC) == int
+            flag = 3
+        except:
+            print("Re_enter valueC value")
+            continue
+
+    try:
+        quadratic.rootsOfEquation(valueA, valueB, valueC)
 
     except RuntimeError:
         print("Runtime Error")

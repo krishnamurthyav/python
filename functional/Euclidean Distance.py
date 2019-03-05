@@ -11,21 +11,30 @@
 
 from Utilities.utility import FunctionalCode
 
-obj = FunctionalCode
+distance = FunctionalCode
+
 
 class Distance:
+    flag = 0
+    while flag == 0:
+        try:
+            pointX = float(input("Enter The value of X :"))  # reading input as float
+            type(pointX) == float
+            flag = 1
+        except:
+            print("Enter valid number")
+            continue
+
+    while flag == 1:
+        try:
+            pointY = float(input("Enter The value of Y :"))  # reading input as float
+            type(pointY) == float
+            flag = 2
+        except:
+            print("Enter valid value")
+            continue
+
     try:
-        print("Enter The value of X :")
-        x = float(input())
-        print("Enter The value of Y :")
-        y = float(input())
-
-        while x < 0.0:
-            x = float(input("Please Provide valid Input X"))
-
-        while y < 0.0:
-            y = float(input("Please Provide valid Input Y"))
-
-        obj.findEuclideanDistance(x, y)
+        distance.findEuclideanDistance(pointX, pointY)  # calling function
     except ValueError:
         print("oops Something Went Wrong......... Please Provide Only Float Values........")

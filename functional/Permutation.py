@@ -11,13 +11,23 @@
 
 from Utilities.utility import FunctionalCode
 
-u = FunctionalCode
+permutation = FunctionalCode
 
 def permut():
-    word = list(input("Enter the string \n")) # take string input
-    for p in u.permutation(word):
-        print(p) # print the permutation
-    u.permutation(word)
+    flag = 0
+    while flag == 0:
+        try:
+            word = list(input("Enter the string \n")) # take string input
+            type(word) == str
+            flag = 1
+        except:
+            print("Enter string only")
+
+
+        for string1 in permutation.permutation(word):
+            print(string1) # print the permutation
+
+        permutation.permutation(word)
 
 if __name__ == "__main__":
     permut()

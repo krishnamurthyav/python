@@ -13,27 +13,40 @@
 
 from Utilities.utility import FunctionalCode
 
-g1 = FunctionalCode
+gambler = FunctionalCode
 
 
 class Gambler:
-    try:
-        print("Enter the amount")
-        stake = int(input())
-        print("Enter the goal amount")
-        goal = int(input())
-        print("Enter Number of times to play")
-        count = int(input())
-        while stake < 0:
-            stake = int(input("enter positive amount"))
+    flag = 0
+    while flag == 0:
+        try:
+            stake = float(input("Enter stake amount"))
+            type(stake) == float
+            flag = 1
+        except:
+            print("Re-Enter stake value")
+            continue
 
-        while goal < 0:
-            goal = int(input("enter target amount "))
+    while flag == 1:
+        try:
+            goal = float(input("Enter the goal amount"))
+            type(goal) == float
+            flag = 2
+        except:
+            print("Re-Enter goal value")
+            continue
 
-        while count < 0:
-            count = int(input("Enter positive count"))
+    while flag == 2:
+        try:
+            count = int(input("Enter Number of times to play"))
+            type(count) == int
+            flag = 3
+        except:
+            print("Re_enter Integer value")
+            continue
 
-        g1.gambler_Game(stake, goal, count)
+        try:
+            gambler.gambler_Game(stake, goal, count)
 
-    except RuntimeError:
-        print("Error occured")
+        except RuntimeError:
+            print("Error occured")

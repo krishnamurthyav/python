@@ -11,17 +11,22 @@
 
 from Utilities.utility import FunctionalCode
 
-h1 = FunctionalCode()
+harmonic = FunctionalCode()
 
 
 class HarmonicNum:
-    try:
-        print("Enter the value of N")
-        number = int(input())
-        while number == 0:
-            number = int(input("Enter positive value"))
+    flag = 0
+    while flag == 0:
+        try:
+            number = int(input("Enter the value of N"))
+            type(number) == int
+            flag = 1
+        except:
+            print("Invalid number \n")
+            continue
 
-        h1.harmonic_Num(number)
+        try:
+            harmonic.harmonic_Num(number)
 
-    except RuntimeError:
-        print("Error occured")
+        except RuntimeError:
+            print("Error occured")

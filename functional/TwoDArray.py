@@ -10,33 +10,45 @@
 
 from Utilities.utility import FunctionalCode
 
-ta = FunctionalCode
+array = FunctionalCode
 
 class TwoDArray:
+    flag = 0
+    while flag == 0:
+        try:
+            rows = int(input("Enter row number"))
+            while rows <= 0:
+                rows = int(input("Enter correct row "))
+                continue
+            type(rows) == int
+            flag = 1
+        except:
+            print("Re-Enter row number")
+            continue
+
+    while flag == 1:
+        try:
+            cols = int(input("Enter column "))
+            while cols <= 0:
+                cols = float(input("Enter valid column number"))
+                type(cols) == float
+                flag = 2
+        except:
+            print("Re-Enter column number")
+            continue
+
     try:
-        print("Enter Number of rows")
-        rows = int(input())
-        print("Enter Number of columns")
-        cols = int(input())
-
-        while rows < 0:
-            rows = int(input("Enter positive value"))
-
-        while cols < 0:
-            cols = int(input("Enter positive value"))
-
         size = rows * cols
         print("Enter ", size ,"numbers")
         matrix = []
 
-        for i in range(rows):
+        for row in range(rows):
             row_list = []
-            for j in range(cols):
+            for col in range(cols):
                 row_list.append(int(input()))
-
             matrix.append(row_list)
 
-        ta.MatrixArray(matrix,rows,cols)
+        array.MatrixArray(matrix, rows, cols)
 
     except RuntimeError:
         print("Error occuer")

@@ -16,16 +16,16 @@ obj = FunctionalCode
 class StopWatchTimer:
     try:
         print("Enter 1 To Start :")
-        choice = int(input())
-        while choice != 1:
-            choice = int(input("Please Provide Valid Input(Enter 1 Only)\n"))
-        start = obj.startWatch(choice)
+        choice1 = int(input())
+        while choice1 != 1:
+            choice1 = int(input("Please Provide Valid Input(Enter 1 Only)\n"))
+        start = obj.startWatch(choice1)
 
         print("Enter 2 To StopWatch :")
-        n = int(input())
-        while n != 2:
-            choice = int(input("Please Provide Valid Input(Enter 2 Only)\n"))
-        obj.stopWatch(n, start)
+        choice2 = int(input())
+        while choice2 != 2:
+            choice2 = int(input("Please Provide Valid Input(Enter 2 Only)\n"))
+        obj.stopWatch(choice2, start)
 
     except ValueError:
         print('oops Something Went Wrong......... Please Provide Only Integer Values.......')

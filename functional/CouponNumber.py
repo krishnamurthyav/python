@@ -10,18 +10,22 @@
 
 from Utilities.utility import FunctionalCode
 
-cn = FunctionalCode
+coupon = FunctionalCode
 
 
 class Coupon_Code:
-    try:
-        print("Enter Distinct Coupon Number :")
-        n = int(input())
+    flag = 0
+    while flag == 0:
+        try:
+            number = int(input("Enter Required Distinct Coupon Number : \n"))     # reading input as number
+            type(number) == int
+            flag = 1
+        except:
+            print("Error - Please Provide Positive Number\n")  # reading input as number
+            continue
 
-        while n < 0:
-            n = int(input("Please Provide Positive Number"))
+        try:
+            coupon.generateCouponNumbers(number)     # calling function and passsing number as argument
 
-        cn.generateCouponNumbers(n)
-
-    except ValueError:
-        print("oops Something Went Wrong......... Please Provide Only Integer Values........")
+        except Exception as e:
+            print("Something Went Wrong.........",e)

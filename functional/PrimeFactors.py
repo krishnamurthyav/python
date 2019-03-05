@@ -12,16 +12,21 @@
 
 from Utilities.utility import FunctionalCode
 
-p1 = FunctionalCode
+prime = FunctionalCode
 
 class Prime_Factors:
-    try:
-        print("Enter a Number to find its Prime Factors")
-        num = int(input())
-        if num < 0:
-            num = int(input("Enter positive number"))
+    flag = 0
+    while flag == 0:
+        try:
+            number = int(input("Enter a Number to find its Prime Factors"))
+            type(number) == int
+            flag = 1
+        except:
+            print("Enter integer number")
+            continue
 
-        p1.prime_Factors(num)
+        try:
+            prime.prime_Factors(number)
 
-    except RuntimeError:
-        print("Something went wrong")
+        except RuntimeError:
+            print("Something went wrong")

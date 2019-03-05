@@ -12,21 +12,32 @@
 
 from Utilities.utility import FunctionalCode
 
-si =FunctionalCode
+triplets =FunctionalCode
 
 class SumOfInt:
+    flag = 0
+    while flag == 0:
+        try:
+            size = int(input("Enter The Array Size :"))
+            type(size) == int
+            flag = 1
+        except:
+            print("Re-Enter array size")
+            continue
+
+    arr = []
+    while flag == 1:
+        try:
+            for number in range(size):
+                elements = int(input("Enter The Array Elements\n"))
+                type(elements) == int
+                arr.append(elements)
+                flag = 2
+        except:
+            print("Enter integer values only")
+            continue
+
     try:
-        print("Enter The Array Size :")
-        n = int(input())
-
-        while n < 0:
-            n = int(input("Please Provide +ve Number only"))
-
-        arr = []
-        print("Enter The Array Elements\n")
-        for x in range(n):
-            arr.append(int(input()))
-
-        si.SumOfThree(arr)
-    except ValueError:
+        triplets.SumOfThree(arr)
+    except Exception:
         print("oops Something Went Wrong......... Please Provide Only Integer Values........")

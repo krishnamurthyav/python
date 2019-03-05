@@ -10,14 +10,24 @@
 
 from Utilities.utility import FunctionalCode
 
-l1 = FunctionalCode()
+leapyear = FunctionalCode()
 
 
 class LeapYear:
-    try:
-        print("Enter year ")
-        year = int(input())
-        l1.test_LeapYear(year)
+    flag = 0
+    while flag == 0:
+        try:
+            year = int(input("Enter year "))
+            type(year) == int
+            while year < 999 or year > 10000:
+                year = int(input("Enter year greaterthan 999 and lessthan 10000"))
+            flag = 1
+        except:
+            print("Enter valid year \n")
+            continue
 
-    except ValueError:
-        print("Something gone wrong")
+        try:
+            leapyear.test_LeapYear(year)
+
+        except ValueError:
+            print("Something gone wrong")

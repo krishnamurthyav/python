@@ -11,19 +11,24 @@
 
 from Utilities.utility import FunctionalCode
 
-c1 = FunctionalCode
+flipcoin = FunctionalCode
 
 
 def flip():
+    flag = 0
+    while flag == 0:
+        try:
+            number = int(input("Enter number of time to flip a coin"))
+            type(number) == int
+            flag = 1
+        except:
+            print("Enter valid integer value\n")
+            continue
+
     try:
-        print("Enter number of time to flip a coin")
-        n = int(input())
-        while n < 0:
-            n = input("Enter valid number")
+        flipcoin.coin_Flip(number)
 
-        c1.coin_Flip(n)
-
-    except ValueError:
+    except RuntimeError:
         print("Error occured")
 
 

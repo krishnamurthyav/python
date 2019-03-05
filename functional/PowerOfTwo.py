@@ -12,16 +12,23 @@
 
 from Utilities.utility import FunctionalCode
 
-p1 = FunctionalCode
+power = FunctionalCode
 
 class PowerTwo:
-    try:
-        print("Enter power value")
-        n = int(input())
-        while n < 0 or n >= 32:
-            n = int(input("Enter value between 0 to 31"))
+    flag = 0
+    while flag == 0:
+        try:
+            number = int(input("Enter power value"))
+            type(number) == int
+            while number < 0 or number >= 32:
+                number = int(input("Enter value between 0 to 31"))
+            flag = 1
+        except:
+            print("Enter only integer value")
+            continue
 
-        p1.power_Of_two(n)
+        try:
+            power.power_Of_two(number)
 
-    except RuntimeError:
-        print("Error occured")
+        except RuntimeError:
+            print("Error occured")
